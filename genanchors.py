@@ -140,7 +140,9 @@ def main(argv):
         print(line)
         try:
             f2 = open(line)
-        except:
+        except Exception as e:
+            print(e)
+            print("Skipping this file")
             continue
         for line in f2.readlines():
             line = line.rstrip('\n')
