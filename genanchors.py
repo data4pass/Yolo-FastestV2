@@ -138,7 +138,10 @@ def main(argv):
         line = line.replace('.jpg','.txt')
         line = line.replace('.png','.txt')
         print(line)
-        f2 = open(line)
+        try:
+            f2 = open(line)
+        except:
+            continue
         for line in f2.readlines():
             line = line.rstrip('\n')
             #w,h = line.split(' ')[3:]
