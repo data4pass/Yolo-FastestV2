@@ -141,7 +141,9 @@ def main(argv):
         f2 = open(line)
         for line in f2.readlines():
             line = line.rstrip('\n')
-            w,h = line.split(' ')[3:]            
+            #w,h = line.split(' ')[3:]
+            w = line.split(' ')[3]
+            h = line.split(' ')[4]
             #print(w,h)
             annotation_dims.append(tuple(map(float,(w,h))))
     annotation_dims = np.array(annotation_dims)
